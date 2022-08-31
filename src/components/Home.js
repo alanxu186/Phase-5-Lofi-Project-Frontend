@@ -1,8 +1,11 @@
 import React from 'react'
+import PostContainer from './components/PostContainer'
 
 const Home = () => {
   return (
-    <div>Homepage</div>
+    <div>Homepage
+      <PostContainer/>
+    </div>
   )
 }
 
