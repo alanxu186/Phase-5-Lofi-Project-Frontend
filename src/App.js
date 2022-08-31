@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Bookmark from "./components/Bookmark";
 import Profile from "./components/Profile"
+import Login from "./components/Login";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />}/>
       </Routes>
 
     </div>

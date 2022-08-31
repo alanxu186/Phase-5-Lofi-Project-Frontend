@@ -5,11 +5,11 @@ import Typed from 'react-typed'
 const Main = () => {
     return (
         <div className='main'>
-            <div className='overlay'></div>
+            {/* <div className='overlay'></div> */}
             <video src={lofibg} autoPlay loop muted/>
             <div className='content'>
-                <Typed className='md:text-5xl sm:text-4xl text-xl font-bold'
-                    strings={['Welcome to Cafe Heiwa']}
+                <Typed className='md:text-8xl  font-bold'
+                    strings={['Welcome to Cafe Heiwa!']}
                     typeSpeed={120}
                     backSpeed={140}
                     loop
