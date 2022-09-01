@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
+import cafelogo from '../assets/cafelogo.png'
 
 const Navbar = () => {
     const [nav, setNav] = useState(false)
@@ -14,6 +15,7 @@ const Navbar = () => {
 
             <div className='text-2xl font-bold text-center uppercase p-4'>
                 <h1 className='block text-7xl'> Cafe Heiwa</h1>
+                {/* <img src={cafelogo}/> */}
             </div>
 
             <nav>
