@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Form from './Form'
 import coffeeshop from "../assets/coffeeshop.gif"
 
 const Login = () => {
