@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import MenuItem from './MenuItem'
 import { Link } from 'react-router-dom'
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
 
@@ -10,7 +9,6 @@ const Navbar = () => {
         setNav(!nav);
     }
 
-
     return (
         <div className='sticky top-0 w-full text-white flex justify-between p-4 items-center z-50 bg-[#18434e]'>
 
@@ -20,22 +18,29 @@ const Navbar = () => {
 
             <nav>
                 <div className='absolute right-6 md:hidden top-6 scale-150'>
-                    <AiOutlineMenu onClick={handleNav} className='scale-150 cursor-pointer'/>
+                    <AiOutlineMenu onClick={handleNav} className='scale-150 cursor-pointer' />
                 </div>
 
                 <ul className="hidden md:flex gap-8 p-6 uppercase bg-white/10">
-        //         <li> <Link to={"/main"}>Main</Link> </li>
-        //         <li> <Link to={"/home"}>Home</Link> </li>
-        //         <li> <Link to={"/about"}>About</Link> </li>
-        //         <li> <Link to={"/bookmark"}>Bookmark</Link> </li>
-        //         <li> <Link to={"/profile"}>Profile</Link> </li>
-        //         <li> <Link to={"/login"}>Login</Link> </li>
-        //     </ul>
+                    <li> <Link to={"/main"}>Main</Link> </li>
+                    <li> <Link to={"/home"}>Home</Link> </li>
+                    <li> <Link to={"/about"}>About</Link> </li>
+                    <li> <Link to={"/bookmark"}>Bookmark</Link> </li>
+                    <li> <Link to={"/profile"}>Profile</Link> </li>
+                    <li> <Link to={"/login"}>Login</Link> </li>
+                </ul>
 
-                <MenuItem handleNav={handleNav} nav={nav} />
+                <ul className={nav ? 'flex-col flex items-center fixed inset-0 left-1/4 uppercase bg-black/40 backdrop-blur-lg gap-8 justify-center p-8 md:hidden' : 'hidden'}>
+                    <AiOutlineClose onClick={handleNav} className='cursor-pointer' />
 
+                    <li> <Link to={"/main"}>Main</Link> </li>
+                    <li> <Link to={"/home"}>Home</Link> </li>
+                    <li> <Link to={"/about"}>About</Link> </li>
+                    <li> <Link to={"/bookmark"}>Bookmark</Link> </li>
+                    <li> <Link to={"/profile"}>Profile</Link> </li>
+                    <li> <Link to={"/login"}>Login</Link> </li>
+                </ul>
             </nav>
-
 
         </div>
 
