@@ -4,6 +4,9 @@ import LeftContainer from './LeftContainer'
 import RightContainer from './RightContainer'
 
 const Home = () => {
+
+  
+
   return (
     <div className='flex justify-center h-screen'>
       <LeftContainer/>
