@@ -7,11 +7,13 @@ import { logout } from '../redux/userSlice'
 const Profile = () => {
   const dispatch = useDispatch();
 
-  const handleLogout = async (e) =>{
-        e.preventDefault()
-        // console.log('hi')
-        dispatch(logout())
-    }
+  const handleLogout = async (e) => {
+    e.preventDefault()
+    // console.log('hi')
+    dispatch(logout())
+
+    
+  }
 
   return (
     <div className='shadow'>
@@ -23,15 +25,15 @@ const Profile = () => {
         </div>
       </div>
 
-    <button onClick={handleLogout}>Logout</button>
-      
+      <button className='bg-black text-white' onClick={handleLogout}>Logout</button>
 
-    <div>
-      <p>Name</p>
-      <p>This my bio i guess</p>
-      <p>Followers:</p>
-      <p>Following:</p>
-    </div>
+
+      <div>
+        <p>Name</p>
+        <p>This my bio i guess</p>
+        <p>Followers:</p>
+        <p>Following:</p>
+      </div>
 
     </div>
   )

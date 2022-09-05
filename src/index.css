@@ -34,7 +34,7 @@ video{
 
 .content{
   position: absolute;
-  top: 50vh;
+  top: 45vh;
   width: 100%;
   display: flex;
   flex-direction: column;

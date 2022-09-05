@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
-import cafelogo from '../assets/cafelogo.png'
-import { useSelector } from 'react-redux'
+import lofipfp from '../assets/lofipfp.jpeg'
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from '../redux/userSlice'
 
 const Navbar = () => {
-    const {currentUser} = useSelector(state => state.user)
+    const { currentUser } = useSelector(state => state.user)
+    const dispatch = useDispatch()
+
+    const handleLogout = async (e) => {
+        e.preventDefault()
+        // console.log('hi')
+        dispatch(logout())
+    }
 
     const [nav, setNav] = useState(false)
-
-    
 
     const handleNav = () => {
         setNav(!nav);
@@ -28,14 +34,15 @@ const Navbar = () => {
                     <AiOutlineMenu onClick={handleNav} className='scale-150 cursor-pointer' />
                 </div>
 
-                <ul className="hidden md:flex gap-8 p-6 uppercase bg-white/10">
+                <ul className="hidden md:flex gap-8 p-6 uppercase bg-white/10 h-20 ">
                     <li> <Link to={"/main"}>Main</Link> </li>
                     <li> <Link to={"/"}>Home</Link> </li>
                     <li> <Link to={"/about"}>About</Link> </li>
                     <li> <Link to={"/bookmark"}>Bookmark</Link> </li>
                     <li> <Link to={"/profile"}>Profile</Link> </li>
                     <p>{currentUser.name}</p>
-                    {/* <li> <Link to={"/login"}>Login</Link> </li> */}
+                    <img src={lofipfp} className="rounded-full h-10 w-10" />
+                    <li> <Link to={"/login"} onClick={handleLogout}>Logout</Link> </li>
                 </ul>
 
                 <ul className={nav ? 'flex-col flex items-center fixed inset-0 left-1/4 uppercase bg-black/40 backdrop-blur-lg gap-8 justify-center p-8 md:hidden' : 'hidden'}>
@@ -46,45 +53,12 @@ const Navbar = () => {
                     <li> <Link to={"/about"}>About</Link> </li>
                     <li> <Link to={"/bookmark"}>Bookmark</Link> </li>
                     <li> <Link to={"/profile"}>Profile</Link> </li>
-                    {/* <li> <Link to={"/login"}>Login</Link> </li> */}
+                    <li> <Link to={"/login"} onClick={handleLogout}>Logout</Link> </li>
                 </ul>
             </nav>
 
         </div>
 
-
-
-        // <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto p-4 text-[#a1bdd0]'>
-
-        //     <h1 className='w-full text-3xl font-bold text-[#a1bdd0]'>Cafe Heiwa</h1>
-        //     <ul className="hidden md:flex">
-        //         <li className="p-4"> <Link to={"/main"}>Main</Link> </li>
-        //         <li className="p-4"> <Link to={"/home"}>Home</Link> </li>
-        //         <li className="p-4"> <Link to={"/about"}>About</Link> </li>
-        //         <li className="p-4"> <Link to={"/bookmark"}>Bookmark</Link> </li>
-        //         <li className="p-4"> <Link to={"/profile"}>Profile</Link> </li>
-        //         <li className="p-4"> <Link to={"/login"}>Login</Link> </li>
-        //     </ul>
-
-        //     <div onClick={handleNav} className="block md:hidden">
-        //         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
-
-        //     </div>
-
-        //     <div>
-        //         <ul className={nav ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#18434e] ease-in-out duration-500" : "ease-in-out duration-500 fixed left-[-100%]"}>
-        //             <h1 className='w-full text-3xl font-bold text-[#a1bdd0]'> Cafe Heiwa</h1>
-        //             <li className='p-4 border-b border-gray-600'><Link to={"/main"}>Main</Link></li>
-        //             <li className='p-4 border-b border-gray-600'><Link to={"/home"}>Home</Link></li>
-        //             <li className='p-4 border-b border-gray-600'><Link to={"/about"}>About</Link></li>
-        //             <li className='p-4 border-b border-gray-600'><Link to={"/bookmark"}>Bookmark</Link></li>
-        //             <li className='p-4 border-b border-gray-600'><Link to={"/profile"}>Profile</Link></li>
-        //             <li className='p-4 border-b border-gray-600'><Link to={"/login"}>Login</Link></li>
-
-        //         </ul>
-        //     </div>
-
-        // </div>
     )
 }
 
