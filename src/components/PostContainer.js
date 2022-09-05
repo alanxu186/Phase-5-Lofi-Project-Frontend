@@ -2,14 +2,19 @@ import React, { useEffect, useState } from 'react'
 import PostTile from './PostTile'
 import lofipfp2 from '../assets/lofipfp2.png'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 
 const PostContainer = () => {
+  // const {id} = useParams
+  // const {currentUser} = useSelector(state => state.user)
+
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get('http://localhost:4000/api/posts/find/630e5435b1b5c11f3de3d2fc');
+        const res = await axios.get(`http://localhost:4000/api/posts/find/`);
         console.log(res.data)
         setPosts(res.data)
       } catch (error) {

@@ -5,21 +5,32 @@ import About from "./components/About";
 import Bookmark from "./components/Bookmark";
 import Profile from "./components/Profile"
 import Login from "./components/Login";
-import { Routes, Route } from "react-router-dom";
+import Register from "./components/Register";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const App = () => {
+
+  const {currentUser} = useSelector(state => state.user)
+
   return (
     <div className="App">
-      <Navbar />
+    { currentUser ? 
+    <>
+      <Navbar /> 
       <Routes>
         <Route path="/main" element={<Main />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />}/>
-      </Routes>
+      </Routes> 
+      </>
+      :
+      <Login/>
 
+    }
     </div>
   );
 }

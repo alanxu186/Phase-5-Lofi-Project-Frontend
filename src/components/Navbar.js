@@ -2,9 +2,14 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
 import cafelogo from '../assets/cafelogo.png'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
+    const {currentUser} = useSelector(state => state.user)
+
     const [nav, setNav] = useState(false)
+
+    
 
     const handleNav = () => {
         setNav(!nav);
@@ -25,22 +30,23 @@ const Navbar = () => {
 
                 <ul className="hidden md:flex gap-8 p-6 uppercase bg-white/10">
                     <li> <Link to={"/main"}>Main</Link> </li>
-                    <li> <Link to={"/home"}>Home</Link> </li>
+                    <li> <Link to={"/"}>Home</Link> </li>
                     <li> <Link to={"/about"}>About</Link> </li>
                     <li> <Link to={"/bookmark"}>Bookmark</Link> </li>
                     <li> <Link to={"/profile"}>Profile</Link> </li>
-                    <li> <Link to={"/login"}>Login</Link> </li>
+                    <p>{currentUser.name}</p>
+                    {/* <li> <Link to={"/login"}>Login</Link> </li> */}
                 </ul>
 
                 <ul className={nav ? 'flex-col flex items-center fixed inset-0 left-1/4 uppercase bg-black/40 backdrop-blur-lg gap-8 justify-center p-8 md:hidden' : 'hidden'}>
                     <AiOutlineClose onClick={handleNav} className='cursor-pointer' />
 
                     <li> <Link to={"/main"}>Main</Link> </li>
-                    <li> <Link to={"/home"}>Home</Link> </li>
+                    <li> <Link to={"/"}>Home</Link> </li>
                     <li> <Link to={"/about"}>About</Link> </li>
                     <li> <Link to={"/bookmark"}>Bookmark</Link> </li>
                     <li> <Link to={"/profile"}>Profile</Link> </li>
-                    <li> <Link to={"/login"}>Login</Link> </li>
+                    {/* <li> <Link to={"/login"}>Login</Link> </li> */}
                 </ul>
             </nav>
 

@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import coffeeshop from "../assets/coffeeshop.gif"
-import { loginStart, loginFailure, loginSuccess } from '../redux/userSlice'
+import { loginStart, loginFailure, loginSuccess, logout } from '../redux/userSlice'
 
 const Login = () => {
     const [name, setName] = useState('')
@@ -25,6 +25,7 @@ const Login = () => {
             dispatch(loginFailure())
         }
     }
+
 
     return (
         <div className='flex w-full h-screen'>
