@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+// import Register from "./Register"
 
 const Login = ({ setEmail, setPassword, handleLogin }) => {
 
@@ -6,6 +7,7 @@ const Login = ({ setEmail, setPassword, handleLogin }) => {
 
     const switchRegister = () => {
         setShowRegister(!showRegister)
+        console.log('hi')
     }
 
     return (

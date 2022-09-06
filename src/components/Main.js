@@ -15,10 +15,10 @@ const Main = () => {
                     backSpeed={140}
                     loop
                 />
-                <div>
+                {/* <div>
                     <button><Link to={"/login"}>Login</Link></button>
                     <button><Link to={"/register"}>Create an account</Link></button>
-                </div>
+                </div> */}
             </div>
         </div>
     )

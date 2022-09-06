@@ -29,6 +29,7 @@ const LoginPage = () => {
             dispatch(loginSuccess(res.data))
         } catch (err) {
             dispatch(loginFailure())
+            alert('Wrong Credentials!')
         }
     }
 
