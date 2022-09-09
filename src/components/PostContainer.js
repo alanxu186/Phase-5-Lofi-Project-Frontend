@@ -8,7 +8,9 @@ import { useSelector } from 'react-redux'
 const PostContainer = () => {
   
   const { currentUser } = useSelector(state => state.user)
+  //state for post
   const [posts, setPosts] = useState([])
+  //state for the text in posts (onchange)
   const [text, setText] = useState('')
 
   //get all posts of current user
@@ -23,7 +25,7 @@ const PostContainer = () => {
     try {
       getPosts()
     } catch (err) {
-
+      console.log('could not get any posts of current user!')
     }
   }, [])
 
@@ -71,6 +73,8 @@ const PostContainer = () => {
 
   //map each individual post in post tile component
   const mappedPosts = posts.map(singlePost => <PostTile key={singlePost._id} updatePost={updatePost} deletePost={deletePost} content={singlePost.content} />)
+
+  mappedPosts.sort()
 
 
   return (

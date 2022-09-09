@@ -39,8 +39,7 @@ const Navbar = () => {
                     <li> <Link to={"/"}>Home</Link> </li>
                     <li> <Link to={"/about"}>About</Link> </li>
                     {/* <li> <Link to={"/bookmark"}>Bookmark</Link> </li> */}
-                    <li> <Link to={"/profile"}>Profile</Link> </li>
-                    <p>{currentUser.name}</p>
+                    <li> <Link to={"/profile"}>{currentUser.name}</Link> </li>
                     <img src={lofipfp} className="rounded-full h-10 w-10" />
                     <li> <Link to={"/login"} onClick={handleLogout}>Logout</Link> </li>
                 </ul>
@@ -52,7 +51,7 @@ const Navbar = () => {
                     <li> <Link to={"/"}>Home</Link> </li>
                     <li> <Link to={"/about"}>About</Link> </li>
                     {/* <li> <Link to={"/bookmark"}>Bookmark</Link> </li> */}
-                    <li> <Link to={"/profile"}>Profile</Link> </li>
+                    <li> <Link to={"/profile"}>{currentUser.name}</Link> </li>
                     <li> <Link to={"/login"} onClick={handleLogout}>Logout</Link> </li>
                 </ul>
             </nav>

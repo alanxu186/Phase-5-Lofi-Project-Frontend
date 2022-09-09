@@ -8,7 +8,6 @@ const PostTile = ({content, updatePost, deletePost}) => {
 
   const { currentUser } = useSelector(state => state.user)
 
-  // console.log(content)
 
 
 

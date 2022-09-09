@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginStart, loginFailure, loginSuccess} from '../redux/userSlice'
+import { useNavigate } from 'react-router-dom'
 
 const LoginPage = () => {
     const { currentUser } = useSelector(state => state.user)
@@ -15,6 +16,7 @@ const LoginPage = () => {
     const [password, setPassword] = useState('')
     // const [register, setRegister] = useState(false)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     // const showRegister = () => {
     //     setRegister(!register)
@@ -29,6 +31,7 @@ const LoginPage = () => {
                 withCredentials: true,
             })
             dispatch(loginSuccess(res.data))
+            navigate('/')
         } catch (err) {
             console.log(err)
             dispatch(loginFailure())

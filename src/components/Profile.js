@@ -8,7 +8,6 @@ import PostTile from './PostTile'
 
 const Profile = () => {
   const { currentUser } = useSelector(state => state.user)
-  console.log(currentUser)
 
   const [bio, setBio] = useState('')
   const [posts, setPosts] = useState([])
@@ -23,6 +22,7 @@ const Profile = () => {
       .then(posts => setPosts(posts.posts))
   }, [])
 
+ 
  
   const updateProfile = async () => {
     try {
@@ -49,7 +49,7 @@ const Profile = () => {
     }
   }
 
-  const mappedPosts = posts.map((singlePost) => (<PostTile/>))
+  const mappedPosts = posts.map((singlePost) => (<PostTile key={singlePost._id}/>))
 
 
 
@@ -66,14 +66,17 @@ const Profile = () => {
 
       <div>
         {/* <p>{currentUser.name}</p> */}
-        <p className='mt-32'>{mappedPosts}</p>
         <p>{currentUser.bio}</p>
         <p>Followers: {currentUser.followers}</p>
         <div>
           <input placeholder='update your bio' onChange={(e) => setBio(e.target.value)} />
         </div>
+        
         <button onClick={updateProfile}>Update button</button>
         <button onClick={deleteProfile}>Delete Account</button>
+
+        <p className='mt-32'>{mappedPosts}</p>
+
         {/* <p>{posts.content}</p> */}
         {/* <p>Following: {currentUser.followedUsers}</p> */}
       </div>
