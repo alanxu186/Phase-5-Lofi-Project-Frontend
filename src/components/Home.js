@@ -4,11 +4,6 @@ import LeftContainer from './LeftContainer'
 import RightContainer from './RightContainer'
 
 const Home = () => {
-  // const [posts, setPosts] = useState([])
-
-  // useEffect(() => {
-
-  // })
 
   return (
     <div className='flex justify-center h-screen'>

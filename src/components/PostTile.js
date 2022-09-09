@@ -1,31 +1,20 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import lofipfp2 from '../assets/lofipfp2.png'
+import { format } from 'timeago.js'
 
-const PostTile = () => {
+const PostTile = ({content, updatePost, deletePost}) => {
+
+  const { currentUser } = useSelector(state => state.user)
+
+  // console.log(content)
+
+
+
   return (
     <div>
-
-      <div className='px-4 mt-4 shadow rounded-lg bg-white'>
-        <div className='p-2 border-b border-gray-300'>
-          <img src={lofipfp2} className='w-10 h-10 rounded-full' />
-          <div >
-            <input className='flex-1 w-full bg-gray-100 rounded-full flex items-center justify-start pl-4 cursor-pointer' placeholder='What is on your mind?' />
-          </div>
-        </div>
-        <div className='p-2 flex mb-5'>
-          <div className='w-1/3 flex space-x-2 justify-center items-center hover:bg-gray-100'>
-            <span className='text-xs sm-text-sm font-semibold text-gray-600'>Upload music</span>
-          </div>
-          <div className='w-1/3 flex space-x-2 justify-center items-center hover:bg-gray-100'>
-            <span className='text-xs sm-text-sm font-semibold text-gray-600'>Upload image</span>
-          </div>
-          <div className='w-1/3 flex space-x-2 justify-center items-center hover:bg-gray-100'>
-            <span className='text-xs sm-text-sm font-semibold text-gray-600'>Upload post</span>
-          </div>
-        </div>
-      </div>
-
-      <div className='shadow bg-white'>
+      <div className='shadow bg-white mb-5'>
 
         <div className='flex items center justify-between px-4 py-2'>
           <div className='flex space-x-2 items-center'>
@@ -35,8 +24,16 @@ const PostTile = () => {
             </div>
 
             <div>
-              <div className='text-md font-semibold'>Koji</div>
-              <span className='text-md text-gray-500'>40 minutes ago</span>
+              <div className='text-md font-semibold'>{currentUser.name}</div>
+              <span className='text-md text-gray-500'></span>
+            </div>
+
+            <div>
+              <button className='bg-gray-300' onClick={updatePost}>Edit button</button>
+            </div>
+
+            <div>
+              <button className='bg-gray-300' onClick={deletePost}>Delete button</button>
             </div>
 
           </div>
@@ -44,11 +41,11 @@ const PostTile = () => {
 
 
         <div className='text-justify px-4 py-2 text-md'>
-          This is my first post
+          {content}
         </div>
 
         <div className='py-2'>
-          <img className='w-full' src={lofipfp2} />
+          {/* <img className='w-full' src={lofipfp2} /> */}
         </div>
 
         <div className='py-2 px-4'>
@@ -75,8 +72,6 @@ const PostTile = () => {
             </div>
           </div>
         </div>
-
-
 
       </div>
 

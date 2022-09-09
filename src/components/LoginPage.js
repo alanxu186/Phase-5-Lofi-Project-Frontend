@@ -25,9 +25,12 @@ const LoginPage = () => {
         e.preventDefault()
         dispatch(loginStart())
         try {
-            const res = await axios.post('http://localhost:4000/api/auth/signin', { email, password })
+            const res = await axios.post('http://localhost:4000/api/auth/signin', { email, password }, {
+                withCredentials: true,
+            })
             dispatch(loginSuccess(res.data))
         } catch (err) {
+            console.log(err)
             dispatch(loginFailure())
             alert('Wrong Credentials!')
         }
@@ -38,6 +41,7 @@ const LoginPage = () => {
         try {
             const res = await axios.post('http://localhost:4000/api/auth/signup',{name, email, password})
             console.log(res.data)
+            //useNavigate?
         } catch (err) {
             alert('Account already taken!')
             // console.log('account has already been taken!')

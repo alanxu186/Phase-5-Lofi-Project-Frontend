@@ -8,7 +8,7 @@ import lofipfp5 from '../assets/lofipfp5.jpeg'
 
 const LeftContainer = () => {
     return (
-        <div className='w-1/5 pt-16 h-full hidden xl:flex flex-col fixed left-0 bg-blue-200'>
+        <div className='w-1/5 pt-5 h-full hidden xl:flex flex-col fixed left-0 bg-blue-200'>
             <div className='flex justify-between items-center px-5 h-4 group'>
                 <span className='font-semibold text-gray-500 text-lg'>Featured Artists</span>
             </div>
@@ -17,19 +17,19 @@ const LeftContainer = () => {
                 <li className='border-b border-gray-500'></li>
 
                 <li className='flex items-center space-x-3 mt-5 mb-5 hover:bg-gray-200 rounded-lg transition-all'>
-                    <img className='w-25 h-20 rounded-full' src={lofipfp2} alt="pfp" />
+                    <img className='w-10 h-10 rounded-full' src={lofipfp2} alt="pfp" />
                     <span className='font-semibold'> Koji</span>
                 </li>
                 <li className='flex items-center space-x-3 mb-5 hover:bg-gray-200 rounded-lg transition-all'>
-                    <img className='w-20 h-20 rounded-full' src={lofipfp3} alt="pfp" />
+                    <img className='w-10 h-10 rounded-full' src={lofipfp3} alt="pfp" />
                     <span className='font-semibold'> Kojiro</span>
                 </li>
                 <li className='flex items-center space-x-3 mb-5 hover:bg-gray-200 rounded-lg transition-all'>
-                    <img className='w-20 h-20 rounded-full' src={lofipfp4} alt="pfp" />
+                    <img className='w-10 h-10 rounded-full' src={lofipfp4} alt="pfp" />
                     <span className='font-semibold'> Kobo</span>
                 </li>
                 <li className='flex items-center space-x-3 mb-5 hover:bg-gray-200 rounded-lg transition-all'>
-                    <img className='w-20 h-20 rounded-full' src={lofipfp5} alt="pfp" />
+                    <img className='w-10 h-10 rounded-full' src={lofipfp5} alt="pfp" />
                     <span className='font-semibold'> Ken</span>
                 </li>
                 <li className='border-b border-gray-500'></li>
@@ -42,8 +42,8 @@ const LeftContainer = () => {
 
             <ul className='p-5'>
                 <li className='flex items-center space-x-3 mb-5 hover:bg-gray-200 rounded-lg transition-all'>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                     </svg>
                     <span className='font-semibold'>Profile</span>
                 </li>
